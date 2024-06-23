@@ -1,16 +1,18 @@
 import _ from "lodash";
-import myName from "./myName";
-import { functionOne, functionTwo } from "./myModule";
+import "./style.css";
+import Icon from "./icon.png";
 
 function component() {
   const element = document.createElement("div");
 
   // Lodash, now imported by this script
-  //   element.innerHTML = _.join(["Hello", "webpack"], " ");
+  element.innerHTML = _.join(["Hello", "webpack"], " ");
+  element.classList.add("hello");
 
-  // Odin-Project example function
+  const myIcon = new Image();
+  myIcon.src = Icon;
 
-  element.textContent = myName("Slim Shady");
+  element.appendChild(myIcon);
 
   return element;
 }
